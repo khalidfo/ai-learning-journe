@@ -1,11 +1,11 @@
 ---
 name: add-topic
-description: Add or edit a tutorial topic in js/topics.js following the site's content patterns. Use when asked to add a new topic, section, or page to the tutorial site.
+description: Add or edit a tutorial topic in assets/js/topics.js following the site's content patterns. Use when asked to add a new topic, section, or page to the tutorial site.
 ---
 
 # Add a tutorial topic
 
-All content lives in `js/topics.js` in the `TOPICS` array. One section = one sidebar group; one child = one page.
+All content lives in `assets/js/topics.js` in the `TOPICS` array. One section = one sidebar group; one child = one page.
 
 ## Steps
 

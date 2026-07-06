@@ -5,20 +5,21 @@ Static tutorial website: "Maximizing Your AI Learning Journey". Documentation-st
 ## File structure
 
 ```
-index.html         Landing page (hero + "Let's Start Now" button)
-tutorial.html      Tutorial shell (topbar, sidebar, content pane)
-css/base.css       Reset, CSS variables (green palette), shared components
-css/home.css       Hero page styles
-css/tutorial.css   Sidebar tree, content, tables, callouts, responsive
-js/topics.js       ALL topic content lives here (data only)
-js/nav.js          Builds sidebar tree from TOPICS, drawer toggle
-js/router.js       Hash routing (#/topic-id), renders content, prev/next
-README.md          Human-facing overview (keep in sync with this file)
+index.html                Landing page (hero + "Let's Start Now" button)
+tutorial.html             Tutorial shell (topbar, sidebar, content pane)
+assets/css/base.css       Reset, CSS variables (green palette), shared components
+assets/css/home.css       Hero page styles
+assets/css/tutorial.css   Sidebar tree, content, tables, callouts, responsive
+assets/js/topics.js       ALL topic content lives here (data only)
+assets/js/nav.js          Builds sidebar tree from TOPICS, drawer toggle
+assets/js/router.js       Hash routing (#/topic-id), renders content, prev/next
+assets/home-hero.png      Home page screenshot (used in README only)
+README.md                 Human-facing overview (keep in sync with this file)
 ```
 
 ## Conventions
 
-- **Content lives only in `js/topics.js`** — a `TOPICS` array of sections, each with `children: [{ id, title, html }]`. Never hardcode topic content in HTML files.
+- **Content lives only in `assets/js/topics.js`** — a `TOPICS` array of sections, each with `children: [{ id, title, html }]`. Never hardcode topic content in HTML files.
 - **Routing**: `tutorial.html#/topic-id`. Router falls back to first topic on unknown/empty hash.
 - **Green theme only** — use CSS variables from `base.css` (`--green-50` … `--green-950`). No other accent colors.
 - **No frameworks, no dependencies, no fetch()** — fetch of local files breaks on `file://`.

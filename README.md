@@ -4,6 +4,8 @@ A documentation-style static tutorial website: **"Maximizing Your AI Learning Jo
 
 Built with pure HTML, CSS, and vanilla JavaScript. No frameworks, no dependencies, no build step, no server.
 
+![Home page hero](assets/home-hero.png)
+
 ## Quick start
 
 Double-click `index.html` — that's it. The site runs directly from disk (`file://`).
@@ -32,14 +34,16 @@ python -m http.server 8000
 ai-learning-journey/
 ├── index.html            Landing page (hero + "Let's Start Now")
 ├── tutorial.html         Tutorial shell: topbar, sidebar, content pane
-├── css/
-│   ├── base.css          Reset, CSS variables (green palette), shared styles
-│   ├── home.css          Hero page styles
-│   └── tutorial.css      Sidebar tree, content, tables, responsive rules
-├── js/
-│   ├── topics.js         ALL topic content (data only — edit here)
-│   ├── nav.js            Builds the sidebar tree, drawer toggle
-│   └── router.js         Hash routing, content render, prev/next
+├── assets/
+│   ├── css/
+│   │   ├── base.css      Reset, CSS variables (green palette), shared styles
+│   │   ├── home.css      Hero page styles
+│   │   └── tutorial.css  Sidebar tree, content, tables, responsive rules
+│   ├── js/
+│   │   ├── topics.js     ALL topic content (data only — edit here)
+│   │   ├── nav.js        Builds the sidebar tree, drawer toggle
+│   │   └── router.js     Hash routing, content render, prev/next
+│   └── home-hero.png     Home page screenshot (used in this README)
 ├── CLAUDE.md             Instructions for Claude Code sessions
 └── .claude/
     └── skills/
@@ -61,7 +65,7 @@ ai-learning-journey/
 
 ## Adding a topic
 
-All content lives in `js/topics.js` as a `TOPICS` array. Add a child object with `id`, `title`, and `html` — the sidebar and routing update automatically. Full pattern documented in `.claude/skills/add-topic/SKILL.md`.
+All content lives in `assets/js/topics.js` as a `TOPICS` array. Add a child object with `id`, `title`, and `html` — the sidebar and routing update automatically. Full pattern documented in `.claude/skills/add-topic/SKILL.md`.
 
 ## License
 
