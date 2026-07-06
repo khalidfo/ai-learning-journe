@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial — Maximizing Your AI Learning Journey</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/tutorial.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <button class="topbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <a class="topbar__brand" href="index.html">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/>
+      </svg>
+      Maximizing Your AI Learning Journey
+    </a>
+  </header>
+
+  <!-- Sidebar tree (built by nav.js) -->
+  <nav class="sidebar" id="sidebar" aria-label="Tutorial topics"></nav>
+
+  <!-- Mobile overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Content -->
+  <main class="content">
+    <div class="content__inner">
+      <article id="article"><!-- rendered by router.js --></article>
+      <nav class="pager" id="pager" aria-label="Previous and next topic"></nav>
+    </div>
+  </main>
+
+  <script src="js/topics.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
