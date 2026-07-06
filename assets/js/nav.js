@@ -11,16 +11,24 @@
   const CHEVRON =
     '<svg class="sidebar__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
 
+  /* Accordion: close every section except the given one */
+  function closeOtherSections(except) {
+    sidebar.querySelectorAll(".sidebar__section").forEach(function (s) {
+      if (s !== except) s.classList.remove("is-open");
+    });
+  }
+
   /* Build the tree */
   TOPICS.forEach(function (section, i) {
     const wrap = document.createElement("div");
-    wrap.className = "sidebar__section is-open"; // all open by default
+    wrap.className = i === 0 ? "sidebar__section is-open" : "sidebar__section"; // only first open by default
     wrap.dataset.section = i;
 
     const btn = document.createElement("button");
     btn.className = "sidebar__section-btn";
     btn.innerHTML = "<span>" + section.title + "</span>" + CHEVRON;
     btn.addEventListener("click", function () {
+      if (!wrap.classList.contains("is-open")) closeOtherSections(wrap);
       wrap.classList.toggle("is-open");
     });
 
@@ -49,10 +57,12 @@
     sidebar.querySelectorAll(".sidebar__link").forEach(function (a) {
       a.classList.toggle("is-active", a.dataset.topic === id);
     });
-    // ensure the section containing the active link is open
+    // accordion: open only the section containing the active link
     const active = sidebar.querySelector('.sidebar__link[data-topic="' + id + '"]');
     if (active) {
-      active.closest(".sidebar__section").classList.add("is-open");
+      const section = active.closest(".sidebar__section");
+      closeOtherSections(section);
+      section.classList.add("is-open");
       // keep active item visible in the sidebar scroll
       active.scrollIntoView({ block: "nearest" });
     }
