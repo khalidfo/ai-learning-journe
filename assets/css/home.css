@@ -104,3 +104,29 @@
   font-size: 0.8125rem;
   color: var(--text-muted);
 }
+
+.hero__footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.hero__footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.hero__footer a:hover {
+  color: var(--green-700);
+  text-decoration: none;
+}

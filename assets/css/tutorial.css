@@ -305,6 +305,32 @@
   flex: 1;
 }
 
+/* ---- Content footer (social links) ---- */
+.content__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.content__footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.content__footer a:hover {
+  color: var(--green-700);
+  text-decoration: none;
+}
+
 /* ---- Drawer overlay (mobile) ---- */
 .overlay {
   display: none;
