@@ -56,12 +56,11 @@ const TOPICS = [
         title: "Goals",
         html: `
 <h1>Goals</h1>
-<p class="lead">Five concrete goals drive this AI adoption plan.</p>
+<p class="lead">Four concrete goals drive this AI adoption plan.</p>
 
-<h2>The five goals</h2>
+<h2>The four goals</h2>
 <ol>
   <li><strong>Maximize Claude usage</strong> — for tasks needing better quality or higher context limits.</li>
-  <li><strong>Run local AI models</strong> — via Ollama, LM Studio, or other local inference servers.</li>
   <li><strong>Leverage multiple providers</strong> — OpenAI, Claude, Gemini, DeepSeek, Grok, Mistral, etc., chosen per task.</li>
   <li><strong>Optimize for efficiency</strong> — minimize time, cost, token consumption, and compute, while maximizing response quality, speed, scalability, reliability, and privacy.</li>
   <li><strong>Use other models inside Claude</strong> — route tasks to third-party or local models from within the Claude workflow when they fit better.</li>
@@ -90,10 +89,18 @@ const TOPICS = [
     <tr><td><code>Skills</code></td><td>Reusable task playbooks (SKILL.md)</td><td>Automation &amp; Extensibility</td></tr>
     <tr><td><code>Plugins</code></td><td>Add-ons bundling commands, skills, MCP</td><td>Automation &amp; Extensibility</td></tr>
     <tr><td><code>MCP</code></td><td>Standard connector to external tools/data</td><td>Automation &amp; Extensibility</td></tr>
+    <tr><td><code>Claude API</code></td><td>Programmatic access to Claude models</td><td>Claude Fundamentals</td></tr>
+    <tr><td><code>Cowork</code></td><td>Claude working alongside you like a teammate</td><td>Claude Fundamentals</td></tr>
+    <tr><td><code>Tools</code></td><td>Actions beyond text (server &amp; client tools)</td><td>Automation &amp; Extensibility</td></tr>
+    <tr><td><code>Evals</code></td><td>Test and refine skills and agents</td><td>Automation &amp; Extensibility</td></tr>
+    <tr><td><code>Agent loop</code></td><td>Gather context &rarr; act &rarr; verify cycle</td><td>Agents &amp; Subagents</td></tr>
     <tr><td><code>Subagents</code></td><td>Specialized AI workers with own context</td><td>Agents &amp; Subagents</td></tr>
+    <tr><td><code>Managed agents</code></td><td>Server-hosted agents run by Anthropic</td><td>Agents &amp; Subagents</td></tr>
     <tr><td><code>Code review</code></td><td>Automated bug-hunting on your changes</td><td>Workflow Features</td></tr>
     <tr><td><code>Artifacts</code></td><td>Polished visual output (pages, UI)</td><td>Workflow Features</td></tr>
     <tr><td><code>Caveman mode</code></td><td>Token-saving compressed responses</td><td>Workflow Features</td></tr>
+    <tr><td><code>Shortcuts</code></td><td>Input prefixes and keyboard shortcuts</td><td>Workflow Features</td></tr>
+    <tr><td><code>MarkItDown</code></td><td>Convert any file type to Markdown</td><td>Workflow Features</td></tr>
   </tbody>
 </table></div>
 
@@ -184,7 +191,7 @@ ${doc("What are Projects (Help Center)", "https://support.claude.com/en/articles
   <tbody>
     <tr><td><code>/context</code></td><td>Shows current context usage</td><td>You want to check how full the window is</td></tr>
     <tr><td><code>/compact</code></td><td>Summarizes the conversation, keeps working</td><td>Long session, same task continues</td></tr>
-    <tr><td><code>/clear</code></td><td>Wipes history, resets to zero</td><td>Switching to an unrelated task</td></tr>
+    <tr><td><code>/clear</code></td><td>Resets the session to zero; the previous conversation is preserved and can be resumed</td><td>Switching to an unrelated task</td></tr>
   </tbody>
 </table></div>
 
@@ -196,6 +203,48 @@ ${doc("What are Projects (Help Center)", "https://support.claude.com/en/articles
 ${video("Context Management in Claude Code", "https://www.youtube.com/watch?v=eW3oTyfeWZ0")}
 ${video("Mastering Claude Code in 30 Minutes", "https://www.youtube.com/watch?v=AOfogJZ70OQ", true)}
 ${doc("Context window docs", "https://code.claude.com/docs/en/context-window")}
+</ul></div>`
+      },
+      {
+        id: "claude-api",
+        title: "Claude API",
+        html: `
+<h1>Claude API</h1>
+<p class="lead">The Claude API (formerly the Anthropic API) is programmatic access to Claude — send requests to Claude models from your own code and build your own apps.</p>
+
+<h2>What you can build with it</h2>
+<ul>
+  <li>Internal tools that call Claude for summarization, extraction, or drafting</li>
+  <li>Customer-facing products with Claude behind the scenes</li>
+  <li>Automations and pipelines — batch processing, report generation, data cleanup</li>
+  <li>Your own agents, using tool use and the Agent SDK</li>
+</ul>
+
+<h2>How it relates to the rest of this tutorial</h2>
+<p>Claude Code, Projects, and Cowork are ready-made surfaces. The API is the raw building block underneath: same models, but you control the prompts, tools, and integration.</p>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${video("Your first API call to Claude", "https://www.youtube.com/watch?v=j0ftK_R5DTs", true)}
+${doc("Claude Docs home", "https://platform.claude.com/docs/en/home")}
+</ul></div>`
+      },
+      {
+        id: "cowork",
+        title: "Cowork",
+        html: `
+<h1>Cowork</h1>
+<p class="lead">Cowork is a workspace where Claude works alongside you like a teammate on tasks — available across web and mobile.</p>
+
+<h2>The idea</h2>
+<p>Instead of a chat you poll, Cowork gives Claude a shared workspace: you hand over tasks, Claude works on them, and you review the results — closer to delegating to a colleague than prompting a bot.</p>
+
+<h2>Why it matters for non-engineers</h2>
+<p>Cowork is a natural fit for the organization-wide adoption goal: project managers, marketers, and operations teams get Claude's help on documents, analysis, and recurring tasks without touching a terminal.</p>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${doc("Intro to Claude Cowork (Academy course)", "https://anthropic.skilljar.com/introduction-to-claude-cowork")}
+${doc("Cowork product page", "https://claude.com/product/cowork")}
+${doc("Cowork on web & mobile (blog)", "https://claude.com/blog/cowork-web-mobile")}
 </ul></div>`
       }
     ]
@@ -443,7 +492,11 @@ ${doc("Agent Skills overview", "https://platform.claude.com/docs/en/agents-and-t
         title: "Plugins",
         html: `
 <h1>Plugins</h1>
-<p class="lead">A plugin is an installable add-on that extends Claude Code with extra slash commands, skills, agents, hooks, or MCP servers — shareable across projects and teams.</p>
+<p class="lead">A plugin is a package of one or more related skills that adds specific capabilities to Claude and can be easily shared and reused across a team or organization.</p>
+
+<div class="callout callout--note">
+  <div><strong>Plugin =</strong> a collection of related skills packaged together for a specific purpose — e.g. a BA Plugin, QA Plugin, Coding Plugin, Sales Plugin, or HR Plugin.</div>
+</div>
 
 <h2>What a plugin can bundle</h2>
 <ul>
@@ -454,13 +507,37 @@ ${doc("Agent Skills overview", "https://platform.claude.com/docs/en/agents-and-t
   <li><strong>MCP servers</strong> — external tool connections</li>
 </ul>
 
+<h2>Example: Customer Support plugin</h2>
+<ul>
+  <li>Skill 1 — Summarize support tickets</li>
+  <li>Skill 2 — Draft customer replies</li>
+  <li>Skill 3 — Analyze customer sentiment</li>
+  <li>Skill 4 — Escalate high-priority issues</li>
+</ul>
+<p>Instead of installing four separate skills, users install <strong>one plugin</strong>.</p>
+
+<h2>Roles</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Role</th><th>What they can do</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Plugin Creator / Maintainer</strong></td><td>Create the plugin, add/remove skills, edit it, run evals, and publish updates</td></tr>
+    <tr><td><strong>Organization Admin</strong></td><td>Publish the plugin to the company's private marketplace and choose distribution: Available, Installed by Default, Required, or Hidden</td></tr>
+    <tr><td><strong>Team Members (Users)</strong></td><td>View the plugin in the company directory, install/use it (if allowed), disable it if not required — but cannot edit it</td></tr>
+  </tbody>
+</table></div>
+
 <h2>Installing</h2>
 <pre><code>/plugin marketplace add &lt;owner&gt;/&lt;repo&gt;
 /plugin install &lt;plugin-name&gt;</code></pre>
 
-<div class="callout callout--tip">
-  <div><strong>Use case:</strong> package your team's whole AI setup (skills + hooks + agents) as one plugin, install it everywhere.</div>
-</div>
+<h2>In one line</h2>
+<ul>
+  <li><strong>Skill</strong> = one capability.</li>
+  <li><strong>Plugin</strong> = a package of related skills.</li>
+  <li><strong>Creator/Maintainer</strong> = creates and edits the plugin.</li>
+  <li><strong>Admin</strong> = distributes the plugin to the organization.</li>
+  <li><strong>Users</strong> = view, install, and use the plugin, but cannot edit it.</li>
+</ul>
 
 <div class="learn-more"><h4>Learn more</h4><ul>
 ${video("The Ultimate Claude Code Guide — MCP, Skills & More", "https://www.youtube.com/watch?v=uogzSxOw4LU")}
@@ -499,6 +576,67 @@ ${video("The Ultimate Claude Code Guide — MCP, Skills & More", "https://www.yo
 ${doc("MCP in Claude Code", "https://code.claude.com/docs/en/mcp")}
 ${doc("modelcontextprotocol.io", "https://modelcontextprotocol.io/docs/getting-started/intro")}
 </ul></div>`
+      },
+      {
+        id: "tools",
+        title: "Tools — Server & Client",
+        html: `
+<h1>Tools — Server &amp; Client</h1>
+<p class="lead">Tools give Claude actions beyond text — reading files, searching the web, running code. They come in two flavors depending on where they execute.</p>
+
+<h2>The two kinds</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Kind</th><th>Where it runs</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Server tools</strong></td><td>On Anthropic's servers — no setup on your side</td><td>Web search, code execution, web fetch</td></tr>
+    <tr><td><strong>Client tools</strong></td><td>On your side — you execute them and return the result to Claude</td><td>Your own functions, database queries, internal APIs</td></tr>
+  </tbody>
+</table></div>
+
+<h2>How a client tool works</h2>
+<pre><code>1. You describe the tool to Claude (name, purpose, parameters)
+2. Claude decides to call it and sends you the arguments
+3. Your code runs the tool and returns the result
+4. Claude uses the result to continue the task</code></pre>
+
+<div class="callout callout--note">
+  <div><strong>Related:</strong> MCP is a standard way to package and share tools — see the MCP topic. How tools compare to agents and subagents is covered in <em>Agent Loop vs Tool vs MCP vs Subagent</em>.</div>
+</div>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${video("What is tool use on the Claude Developer Platform?", "https://www.youtube.com/watch?v=Ao759wXbRc0", true)}
+${video("Claude's built-in tools: web search, code execution, and web fetch", "https://www.youtube.com/watch?v=pm8iwdSIs3M", true)}
+${doc("Tool use overview", "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview")}
+${doc("Tools (managed agents)", "https://platform.claude.com/docs/en/managed-agents/tools")}
+</ul></div>`
+      },
+      {
+        id: "evals",
+        title: "Evals",
+        html: `
+<h1>Evals</h1>
+<p class="lead">An eval tests a skill or agent against example cases to measure how well it works and refine it — teach, test, measure, improve.</p>
+
+<h2>The cycle</h2>
+<pre><code>Teach    write the skill or agent
+Test     run it against example cases
+Measure  score the results against expectations
+Improve  refine instructions, repeat</code></pre>
+
+<h2>Why bother</h2>
+<ul>
+  <li>A skill that "seems fine" on one example often fails on the next — evals catch that before your team relies on it.</li>
+  <li>Evals turn skill-writing from guesswork into iteration: each change is measured against the same cases.</li>
+  <li>Plugin maintainers run evals before publishing updates (see the Plugins topic roles).</li>
+</ul>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${doc("Teach Claude your way of working using Skills", "https://claude.com/resources/tutorials/teach-claude-your-way-of-working-using-skills")}
+${doc("Skill Creator plugin", "https://claude.com/plugins/skill-creator")}
+${doc("Improving Skill Creator: test, measure, refine (blog)", "https://claude.com/blog/improving-skill-creator-test-measure-and-refine-agent-skills")}
+${doc("Cowork evals module (Academy)", "https://anthropic.skilljar.com/introduction-to-claude-cowork/485949")}
+${doc("Skill Evals tutorial (Conduction)", "https://www.conduction.nl/academy/claude-skills-tutorial-3-skill-evals/")}
+</ul></div>`
       }
     ]
   },
@@ -532,6 +670,35 @@ ${doc("modelcontextprotocol.io", "https://modelcontextprotocol.io/docs/getting-s
 ${video("Building the future of agents with Claude", "https://www.youtube.com/watch?v=XuvKFsktX0Q", true)}
 ${video("How AI agents & Claude skills work", "https://www.youtube.com/watch?v=S_oN3vlzpMw")}
 ${doc("Building effective agents (Anthropic research)", "https://www.anthropic.com/research/building-effective-agents")}
+</ul></div>`
+      },
+      {
+        id: "agent-loop",
+        title: "The Agent Loop",
+        html: `
+<h1>The Agent Loop</h1>
+<p class="lead">The agent loop is the repeating cycle an agent runs: gather context, take action, verify results — again and again until the task is done.</p>
+
+<h2>The cycle</h2>
+<pre><code>┌─&gt; 1. Gather context   read files, search, ask questions
+│   2. Take action      call tools: edit, run commands, fetch
+│   3. Verify results   tests pass? output correct?
+└── 4. Repeat           until the task is complete</code></pre>
+
+<h2>Why it matters</h2>
+<ul>
+  <li>It explains agent behavior: Claude doesn't answer once — it iterates until verification passes.</li>
+  <li>Better context in (CLAUDE.md, skills) means fewer loop iterations and faster results.</li>
+  <li>Verification is the quality gate: tests, linters, and hooks make the loop converge on correct output.</li>
+</ul>
+
+<div class="callout callout--note">
+  <div><strong>Role:</strong> the agent loop is the orchestrator — it decides which tools to call, when to delegate to subagents, and when the work is done. Full comparison in <em>Agent Loop vs Tool vs MCP vs Subagent</em>.</div>
+</div>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${video("The Claude agent loop explained", "https://www.youtube.com/watch?v=tBIdyIoCQVU", true)}
+${doc("Agent loop (Agent SDK)", "https://code.claude.com/docs/en/agent-sdk/agent-loop")}
 </ul></div>`
       },
       {
@@ -595,6 +762,38 @@ ${doc("Subagents documentation", "https://code.claude.com/docs/en/sub-agents")}
 
 <div class="learn-more"><h4>Learn more</h4><ul>
 ${doc("Subagents documentation", "https://code.claude.com/docs/en/sub-agents")}
+</ul></div>`
+      },
+      {
+        id: "managed-agents",
+        title: "Managed Agents",
+        html: `
+<h1>Managed Agents</h1>
+<p class="lead">Managed agents are server-hosted agents Anthropic runs for you in a managed sandbox — you define the agent, Anthropic handles the execution environment, tools, and scaling.</p>
+
+<h2>How they differ from local agents</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th></th><th>Local (Claude Code / SDK)</th><th>Managed agent</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Runs on</strong></td><td>Your machine or infrastructure</td><td>Anthropic's servers, in a sandbox</td></tr>
+    <tr><td><strong>You maintain</strong></td><td>Environment, dependencies, scaling</td><td>Only the agent definition</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Local repos, personal workflows</td><td>Production agents, team-scale automation</td></tr>
+  </tbody>
+</table></div>
+
+<h2>When to reach for one</h2>
+<ul>
+  <li>You want an agent running reliably without owning servers or sandboxing.</li>
+  <li>The agent serves a whole team or product, not one developer's machine.</li>
+</ul>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${video("What are managed agents on the Claude Developer Platform?", "https://www.youtube.com/watch?v=haeslvB0zpg", true)}
+${video("Building your first Claude managed agent", "https://www.youtube.com/watch?v=1Rl3gZrlQJo", true)}
+${video("How Notion built with Claude Managed Agents", "https://www.youtube.com/watch?v=45hPRdfDEsI", true)}
+${doc("Managed agents overview", "https://platform.claude.com/docs/en/managed-agents/overview")}
+${doc("Engineering deep dive", "https://www.anthropic.com/engineering/managed-agents")}
+${doc("Announcement blog", "https://claude.com/blog/claude-managed-agents")}
 </ul></div>`
       },
       {
@@ -663,6 +862,54 @@ ${doc("Subagents documentation", "https://code.claude.com/docs/en/sub-agents")}
 <div class="callout callout--tip">
   <div><strong>Shortcut:</strong> if the answer is a <em>document</em> ("here's how we do X"), write a skill. If the answer is a <em>person</em> ("we need someone to do X"), define an agent.</div>
 </div>`
+      },
+      {
+        id: "loop-tool-mcp-subagent",
+        title: "Agent Loop vs Tool vs MCP vs Subagent",
+        html: `
+<h1>Agent Loop vs Tool vs MCP vs Subagent</h1>
+<p class="lead">Four building blocks that get mixed up constantly. One orchestrates, one acts, one connects, one collaborates.</p>
+
+<h2>One-line summary</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Component</th><th>One-line description</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Agent Loop</strong></td><td>The orchestrator that reasons, plans, chooses actions, and coordinates the entire workflow</td></tr>
+    <tr><td><strong>Tool</strong></td><td>A single-purpose function that performs one action when invoked</td></tr>
+    <tr><td><strong>MCP</strong></td><td>A standardized integration layer that gives Claude access to external tools, resources, prompts, and services</td></tr>
+    <tr><td><strong>Subagent</strong></td><td>A specialized Claude instance that independently reasons about a delegated task and returns its results to the main agent</td></tr>
+  </tbody>
+</table></div>
+
+<h2>Full comparison</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Aspect</th><th>Agent Loop</th><th>Tool</th><th>MCP</th><th>Subagent</th></tr></thead>
+  <tbody>
+    <tr><td><strong>What it is</strong></td><td>The execution engine that controls Claude's workflow</td><td>A callable function that performs a specific action</td><td>A protocol connecting Claude to external systems through MCP servers</td><td>A specialized Claude instance dedicated to a focused task</td></tr>
+    <tr><td><strong>Primary purpose</strong></td><td>Plan, reason, execute, and iterate until the task is complete</td><td>Perform a single operation</td><td>Expose external tools, resources, prompts, and services</td><td>Handle specialized or isolated work delegated by the main agent</td></tr>
+    <tr><td><strong>AI reasoning</strong></td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><td><strong>Who executes it</strong></td><td>Main Claude</td><td>Claude invokes the tool</td><td>MCP server executes the requested capability</td><td>Another Claude instance</td></tr>
+    <tr><td><strong>Can make decisions</strong></td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><td><strong>Can plan multi-step tasks</strong></td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><td><strong>Can call tools</strong></td><td>Yes</td><td>No</td><td>Provides tools rather than calling them</td><td>Yes (if permitted)</td></tr>
+    <tr><td><strong>Can use MCP servers</strong></td><td>Yes</td><td>No</td><td>N/A (it is the integration layer)</td><td>Yes (if permitted)</td></tr>
+    <tr><td><strong>Can delegate to subagents</strong></td><td>Yes</td><td>No</td><td>No</td><td>Usually no (unless explicitly allowed)</td></tr>
+    <tr><td><strong>Connects to external systems</strong></td><td>Indirectly (via tools or MCP)</td><td>Sometimes (if the tool itself supports it)</td><td>Yes — its primary purpose</td><td>Indirectly (through tools or MCP, if permitted)</td></tr>
+    <tr><td><strong>Maintains context</strong></td><td>Entire conversation/session</td><td>No</td><td>No (server may keep its own internal state)</td><td>Independent context for the delegated task</td></tr>
+    <tr><td><strong>Scope</strong></td><td>Entire task/session</td><td>One operation</td><td>External integrations</td><td>One delegated task</td></tr>
+    <tr><td><strong>Lifecycle</strong></td><td>Runs continuously until the task is complete</td><td>Starts and ends with a single call</td><td>Long-lived server waiting for requests</td><td>Created for a delegated task, ends when finished</td></tr>
+    <tr><td><strong>Typical examples</strong></td><td>Build a feature, fix bugs, refactor code</td><td>Read file, edit file, run Bash command</td><td>GitHub, Jira, Slack, PostgreSQL, Browser</td><td>Code Reviewer, Documentation Writer, Test Generator</td></tr>
+    <tr><td><strong>Primary role</strong></td><td>Orchestrator</td><td>Action Executor</td><td>Integration Layer</td><td>Specialized Collaborator</td></tr>
+    <tr><td><strong>Analogy</strong></td><td>Project Manager</td><td>Worker using a specific tool</td><td>Supplier / API Gateway</td><td>Specialist Consultant</td></tr>
+  </tbody>
+</table></div>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${video("The Claude agent loop explained", "https://www.youtube.com/watch?v=tBIdyIoCQVU", true)}
+${doc("Tool use overview", "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview")}
+${doc("MCP in Claude Code", "https://code.claude.com/docs/en/mcp")}
+${doc("Subagents documentation", "https://code.claude.com/docs/en/sub-agents")}
+</ul></div>`
       }
     ]
   },
@@ -751,6 +998,72 @@ Caveman: "Bug in auth middleware. Token expiry check use < not <=. Fix:"</code><
 <div class="learn-more"><h4>Learn more</h4><ul>
 ${video("Caveman AI Skill in Claude", "https://www.youtube.com/watch?v=jf1sv2geEWo")}
 ${doc("Caveman plugin (GitHub)", "https://github.com/juliusbrussee/caveman")}
+</ul></div>`
+      },
+      {
+        id: "shortcuts",
+        title: "Shortcuts & Input Prefixes",
+        html: `
+<h1>Shortcuts &amp; Input Prefixes</h1>
+<p class="lead">A handful of keystrokes controls most of Claude Code's interactive workflow — input prefixes open menus, and a few keys steer permissions and history.</p>
+
+<h2>Input prefixes</h2>
+<p>Type these at the <strong>start of the prompt</strong> to open a menu:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Prefix</th><th>Opens</th><th>Use for</th></tr></thead>
+  <tbody>
+    <tr><td><code>@</code></td><td>File-path autocomplete</td><td>Mention a file so Claude reads it</td></tr>
+    <tr><td><code>/</code></td><td>Commands &amp; skills menu</td><td>Run slash commands like <code>/compact</code>, <code>/clear</code>, or a skill</td></tr>
+    <tr><td><code>#</code></td><td>Memory quick-add</td><td>Append a note to memory (CLAUDE.md) without opening the file</td></tr>
+  </tbody>
+</table></div>
+
+<h2>Keyboard shortcuts</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><code>Shift + Tab</code></td><td>Cycles <strong>permission modes</strong>: <code>default</code> (manual) &rarr; <code>acceptEdits</code> (auto-accept edits) &rarr; <code>plan</code> (plan first, no edits) &rarr; any others you enable (<code>auto</code>, <code>bypassPermissions</code>)</td></tr>
+    <tr><td><code>Esc</code></td><td>Interrupts Claude mid-turn — stops the current response or tool call, keeps work done so far. If a dialog (e.g. permission prompt) is open, closes the dialog instead</td></tr>
+    <tr><td><code>Esc Esc</code> (double press)</td><td>With text in the prompt &rarr; clears the draft (saved to history). With an empty prompt &rarr; opens the <strong>rewind menu</strong> to restore or summarize code &amp; conversation from an earlier point</td></tr>
+  </tbody>
+</table></div>
+
+<div class="callout callout--tip">
+  <div><strong>Tip:</strong> the context commands <code>/compact</code>, <code>/clear</code>, and <code>/context</code> are covered in the Context Window topic.</div>
+</div>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${doc("Interactive mode", "https://code.claude.com/docs/en/interactive-mode")}
+${doc("Permission modes", "https://code.claude.com/docs/en/permission-modes")}
+${doc("Checkpointing / rewind", "https://code.claude.com/docs/en/checkpointing")}
+${doc("Memory (#)", "https://code.claude.com/docs/en/memory")}
+${doc("Commands", "https://code.claude.com/docs/en/commands")}
+</ul></div>`
+      },
+      {
+        id: "markitdown",
+        title: "MarkItDown — Any File to Markdown",
+        html: `
+<h1>MarkItDown — Any File to Markdown</h1>
+<p class="lead">MarkItDown is Microsoft's open-source utility that converts almost any file type to Markdown — the format Claude reads best.</p>
+
+<h2>Supported inputs</h2>
+<ul>
+  <li>PDF, Word, PowerPoint, Excel</li>
+  <li>Images (EXIF metadata and OCR)</li>
+  <li>Audio (EXIF metadata and speech transcription)</li>
+  <li>HTML and text-based formats (CSV, JSON, XML)</li>
+  <li>ZIP files (iterates over contents), EPubs, YouTube URLs, and more</li>
+</ul>
+
+<h2>Why it fits this journey</h2>
+<p>Organization knowledge lives in Office documents and PDFs. Converting them to Markdown makes them usable as CLAUDE.md content, skill references, or project files — clean text instead of binary blobs.</p>
+
+<pre><code>pip install markitdown
+markitdown report.pdf &gt; report.md</code></pre>
+
+<div class="learn-more"><h4>Learn more</h4><ul>
+${doc("MarkItDown (GitHub)", "https://github.com/microsoft/markitdown")}
 </ul></div>`
       }
     ]

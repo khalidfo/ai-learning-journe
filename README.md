@@ -21,7 +21,7 @@ python -m http.server 8000
 
 - **Landing page** — clean hero with a single call-to-action
 - **Tutorial layout** — collapsible tree menu on the left, content on the right
-- **24 topics in 7 sections** — from broad concepts down to micro level
+- **33 topics in 7 sections** — from broad concepts down to micro level
 - **Hash routing** — every topic is bookmarkable (`tutorial.html#/hooks`)
 - **Prev/Next navigation** on every page
 - **Fully responsive** — off-canvas drawer menu below 900px
@@ -56,11 +56,11 @@ ai-learning-journey/
 | Section | Topics |
 |---------|--------|
 | Getting Started | Welcome & Vision · Goals · Ecosystem at a Glance |
-| Claude Fundamentals | Claude Code · Projects · Context Window |
+| Claude Fundamentals | Claude Code · Projects · Context Window · Claude API · Cowork |
 | Configuration | CLAUDE.md · Settings & claude.json · Settings Scopes · .claude/ Folder |
-| Automation & Extensibility | Hooks · Skills & SKILL.md · Plugins · MCP |
-| Agents & Subagents | What is an Agent · Subagents · Agent vs Subagent · Skill vs Agent · When to Use Which |
-| Workflow Features | Code Review · Claude Design & Artifacts · Caveman Mode |
+| Automation & Extensibility | Hooks · Skills & SKILL.md · Plugins · MCP · Tools · Evals |
+| Agents & Subagents | What is an Agent · Agent Loop · Subagents · Agent vs Subagent · Managed Agents · Skill vs Agent · When to Use Which · Loop vs Tool vs MCP vs Subagent |
+| Workflow Features | Code Review · Claude Design & Artifacts · Caveman Mode · Shortcuts & Input Prefixes · MarkItDown |
 | Learning Resources | Official Anthropic Resources · Community Channels |
 
 ## Adding a topic
